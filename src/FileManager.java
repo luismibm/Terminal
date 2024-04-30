@@ -1,5 +1,5 @@
 import java.io.File;
-import java.util.Arrays;
+import java.util.Date;
 
 public class FileManager {
 
@@ -47,12 +47,12 @@ public class FileManager {
         File[] files = path.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
-                System.out.println("[D] " + file.getName() + " | " + file.length() + " bytes | Modified: " + file.lastModified());
+                System.out.println("[D] " + file.getName() + " | " + file.length() + " bytes | Modified: " +  new Date(file.lastModified()));
             }
         }
         for (File file : files) {
             if (file.isFile()) {
-                System.out.println("[A] " + file.getName() + " | " + file.length() + " bytes | Modified: " + file.lastModified());
+                System.out.println("[A] " + file.getName() + " | " + file.length() + " bytes | Modified: " + new Date(file.lastModified()));
             }
         }
     }
